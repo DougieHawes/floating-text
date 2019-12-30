@@ -1,0 +1,55 @@
+* {
+  font-family: "Bebas Neue", cursive;
+  margin: 0;
+}
+
+body {
+  align-items: center;
+  background-image: linear-gradient(0deg, rgba(0, 0, 255, 0.42) 50%, rgba(255, 69, 0, 0.42) 0%);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+h1 {
+  color: #00008b;
+  font-size: 140px;
+  transform: translateY(0);
+
+  animation: float1 3s infinite linear;
+}
+
+h1::before {
+  color: goldenrod;
+  content: attr(data-text);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  position: absolute;
+
+  animation: float2 3s infinite linear;
+}
+
+@keyframes float1 {
+  30% {
+    transform: translateY(10%) rotate(4deg);
+  }
+  70% {
+    transform: translateY(10%) rotate(-4deg);
+  }
+}
+
+@keyframes float2 {
+  30% {
+    clip-path: polygon(0 0, 100% 0, 100% 24%, 0 56%);
+  }
+  70% {
+    clip-path: polygon(0 0, 100% 0, 100% 56%, 0 24%);
+  }
+}
+
+img {
+  bottom: 21px;
+  height: 210px;
+  position: absolute;
+  right: 21px;
+  z-index: -100;
+}
